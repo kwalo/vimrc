@@ -240,11 +240,12 @@ map <leader>k :call DeleteBuffer()<CR>
 
 " Autocommands
 if has("autocmd")
-    :autocmd FileType python   set makeprg=nosetests
-    :autocmd FileType python   map gd :RopeGotoDefinition<CR>
-    :autocmd FileType html     set textwidth=160
-    :autocmd FileType phtml    set textwidth=160
-    :autocmd FileType c        set tabstop=8 shiftwidth=8 softtabstop=8
-    :autocmd FileType ruby     set tabstop=2
-    :autocmd FileType text     setlocal textwidth=78
+    :autocmd FileType python     set makeprg=nosetests
+    :autocmd FileType python     map gd :RopeGotoDefinition<CR>
+    :autocmd FileType html       set textwidth=160
+    :autocmd FileType phtml      set textwidth=160
+    :autocmd FileType c          set tabstop=8 shiftwidth=8 softtabstop=8
+    :autocmd FileType ruby       set tabstop=2
+    :autocmd FileType text       setlocal textwidth=78
+    :autocmd FileType javascript set tabstop=4 shiftwidth=4 softtabstop=4
 endif
