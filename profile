@@ -233,7 +233,7 @@ function DeleteBuffer()
   endif
 endfunction
 
-map <leader>k :call DeleteBuffer()<CR>
+map <leader>k :bd<CR>
 
 " Abbreviations
 :ab ret return
