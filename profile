@@ -139,6 +139,9 @@ set wildmenu
 set wildmode=longest,full
 set completeopt=longest,menu
 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
 " Change color of omnicomplete menu
 highlight Pmenu guibg=Grey40
 
@@ -233,6 +236,7 @@ function DeleteBuffer()
   endif
 endfunction
 
+" Kill the buffer quickly
 map <leader>k :bd<CR>
 
 " Abbreviations
