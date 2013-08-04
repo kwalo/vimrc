@@ -169,7 +169,7 @@ map <leader>l <F4>
 map <leader>c :!ctags -R<CR>
 
 " open tag list window
-map <leader>t :TlistToggle<CR>
+map <leader>t :TagbarToggle<CR>
 
 " use F1 for something useful
 map <F1> <esc>
