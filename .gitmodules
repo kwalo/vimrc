@@ -13,3 +13,9 @@
 [submodule "bundle/python-syntax"]
 	path = bundle/python-syntax
 	url = git@github.com:hdima/python-syntax.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "bundle/tablular"]
+	path = bundle/tablular
+	url = https://github.com/godlygeek/tabular.git
