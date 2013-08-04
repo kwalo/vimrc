@@ -1,5 +1,5 @@
 Installation
-------------
+````````````
 
 ::
 
@@ -9,7 +9,7 @@ Installation
     echo ':source ~/.vim/profile' >> ~/.vimrc
 
 Updating
---------
+````````
 
 ::
 
@@ -17,14 +17,14 @@ Updating
     git submodule foreach git pull
 
 Features
---------
+````````
 
 
 * wombat colorscheme
 * enhanced syntax highlight for html, Python, JavaScript and Vala
 
 Keyboard shortcuts
-------------------
+``````````````````
 
 ======== ==================== =======
 Shortuct Vim command          Comment
@@ -36,7 +36,7 @@ Normal mode
 ``,p``   ``"+gP``             Paste from clipboard
 ``,a``   ``ggVG``             Select all text
 ``,n``   ``:NerdTreeToggle``  Show/Hide NERD Tree panel
-``,t``   ``TagbarToggle``     Show/Hode Tagbar panel
+``,t``   ``:TagbarToggle``     Show/Hode Tagbar panel
 ``,l``   ``<F4>``             Display quickbuf switcher
 ``,k``   ``:bd``              Kill current buffer
 ``,h``   ``:noh``             Unhighlight search matches
