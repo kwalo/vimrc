@@ -59,7 +59,7 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " Select whole buffer
-map <leader>a ggVG
+map <leader>G ggVG
 " set rational tabs & co.
 set expandtab
 set softtabstop=4
@@ -225,6 +225,12 @@ endfunction
 
 " Kill the buffer quickly
 map <leader>k :bd<CR>
+
+map <Leader>a= :Tabularize /=
+map <Leader>a: :Tabularize /:
+map <Leader>a:: :Tabularize /:\zs
+map <Leader>a, :Tabularize /,
+map <Leader>a<Bar> :Tabularize /
 
 " Abbreviations
 :ab ret return

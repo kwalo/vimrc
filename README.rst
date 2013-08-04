@@ -22,6 +22,7 @@ Features
 
 * wombat colorscheme
 * enhanced syntax highlight for html, Python, JavaScript and Vala
+* Tabularize plugin
 
 Keyboard shortcuts
 ``````````````````
@@ -34,7 +35,7 @@ Normal mode
 ``,d``   ``"+d``              Cut to clipboard
 ``,y``   ``"+y``              Copy to clipboard
 ``,p``   ``"+gP``             Paste from clipboard
-``,a``   ``ggVG``             Select all text
+``,G``   ``ggVG``             Select all text
 ``,n``   ``:NerdTreeToggle``  Show/Hide NERD Tree panel
 ``,t``   ``:TagbarToggle``     Show/Hode Tagbar panel
 ``,l``   ``<F4>``             Display quickbuf switcher
