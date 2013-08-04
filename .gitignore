@@ -1,2 +1,4 @@
 *.pyc
 .VimballRecord
+.*.sw?
+doc/tags
