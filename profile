@@ -150,11 +150,6 @@ set listchars=tab:▸\ ,eol:¬
 " Change color of omnicomplete menu
 highlight Pmenu guibg=Grey40
 
-" --> [mappings]
-"
-" prompt for spelllanguage and turn spellchecker on
-nmap <F7> :setlocal spell spelllang=
-
 " turn on NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 
@@ -172,19 +167,6 @@ map <leader>c :!ctags -R<CR>
 
 " open tag list window
 map <leader>t :TagbarToggle<CR>
-
-" use F1 for something useful
-map <F1> <esc>
-imap <F1> <esc>
-
-" Taglist
-map <leader>b  :TlistToggle<CR>
-map <F12>  :TlistToggle<CR>
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Close_On_Select = 1
 
 " --> [autocommands]
 "
