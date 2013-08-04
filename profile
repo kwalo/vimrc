@@ -10,9 +10,12 @@ set history=150
 " Better look in console
 set t_Co=256
 
+" Launch pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 " enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Disable GUI toolbar
 set guioptions-=T
