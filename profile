@@ -11,8 +11,10 @@ set history=150
 set t_Co=256
 
 " Launch pathogen
+filetype off
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+execute pathogen#helptags()
 
 " enable filetype plugins
 filetype plugin indent on
