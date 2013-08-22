@@ -46,6 +46,10 @@ map <leader>d "+d
 map <leader>y "+y
 map <leader>p "+gP
 
+" Resize window vertically
+map <C-W>, <C-W><
+map <C-W>. <C-W>>
+
 " Search for selected text, forwards or backwards
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
@@ -88,7 +92,7 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
 
 
-colorscheme wombat
+colorscheme ron
 
 if has("gui_running")
     set guifont=DejaVu\ Sans\ Mono\ 10
