@@ -34,3 +34,6 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
+[submodule "bundle/skybison"]
+	path = bundle/skybison
+	url = git@github.com:paradigm/SkyBison.git
