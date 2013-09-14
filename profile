@@ -239,7 +239,6 @@ map <Leader>a<Bar> :Tabularize /
 " Abbreviations
 :ab ret return
 
-nnoremap <leader>: :<c-u>call SkyBison("")<cr>
 
 " Autocommands
 if has("autocmd")
