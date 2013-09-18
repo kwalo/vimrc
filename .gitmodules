@@ -40,3 +40,6 @@
 [submodule "bundle/FSwitch"]
 	path = bundle/FSwitch
 	url = git@github.com:vim-scripts/FSwitch.git
+[submodule "bundle/bitbake"]
+	path = bundle/bitbake
+	url = git@github.com:kergoth/vim-bitbake.git
