@@ -37,3 +37,6 @@
 [submodule "bundle/skybison"]
 	path = bundle/skybison
 	url = git@github.com:paradigm/SkyBison.git
+[submodule "bundle/FSwitch"]
+	path = bundle/FSwitch
+	url = git@github.com:vim-scripts/FSwitch.git
