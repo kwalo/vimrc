@@ -236,6 +236,17 @@ map <Leader>a:: :Tabularize /:\zs
 map <Leader>a, :Tabularize /,
 map <Leader>a<Bar> :Tabularize /
 
+" CtrlP features
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_working_path_mode = 'ra'
+
+" Ignore some files from editing
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+
+
 " Abbreviations
 :ab ret return
 
