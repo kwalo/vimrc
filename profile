@@ -249,5 +249,5 @@ if has("autocmd")
     :autocmd FileType c          set tabstop=8 shiftwidth=8 softtabstop=8
     :autocmd FileType ruby       set tabstop=2
     :autocmd FileType text       setlocal textwidth=78
-    :autocmd FileType javascript set tabstop=4 shiftwidth=4 softtabstop=4
+    :autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
 endif
