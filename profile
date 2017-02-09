@@ -70,7 +70,7 @@ set softtabstop=4
 set shiftwidth=4
 
 " set text wraping
-set textwidth=78
+set textwidth=120
 
 " --> [visuals]
 "
@@ -91,8 +91,9 @@ set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
 
-
 colorscheme ron
+highlight StatusLine ctermbg=2
+highlight StatusLine ctermfg=0
 
 if has("gui_running")
     set guifont=DejaVu\ Sans\ Mono\ 10
@@ -103,7 +104,6 @@ if has("gui_running")
 else
     set mouse=
 endif
-hi statusline ctermfg=grey
 
 " --> [others]
 "
