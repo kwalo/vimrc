@@ -89,11 +89,9 @@ set scrolloff=3
 " always show statusline
 set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-" set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
+"set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
 
 colorscheme ron
-highlight StatusLine ctermbg=2
-highlight StatusLine ctermfg=0
 
 if has("gui_running")
     set guifont=DejaVu\ Sans\ Mono\ 10
@@ -261,4 +259,9 @@ if has("autocmd")
     :autocmd FileType ruby       set tabstop=2
     :autocmd FileType text       setlocal textwidth=78
     :autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
+    :autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+    :autocmd VimLeave * call system("tmux rename-window zsh")
+    :autocmd BufEnter * let  &titlestring = " " . expand("%:t")
+    set title
 endif
+
