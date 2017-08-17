@@ -152,6 +152,9 @@ set listchars=tab:▸\ ,eol:¬
 " Change color of omnicomplete menu
 highlight Pmenu guibg=Grey40
 
+" Change status line color
+highlight StatusLine ctermfg=8 ctermbg=7
+
 " turn on NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 
