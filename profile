@@ -16,6 +16,8 @@ runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 
+set path+=**
+
 " enable filetype plugins
 filetype plugin indent on
 
@@ -169,9 +171,6 @@ map <leader>l <F4>
 
 " ctags shortcut
 map <leader>c :!ctags -R<CR>
-
-" open tag list window
-map <leader>t :TagbarToggle<CR>
 
 " --> [autocommands]
 "
