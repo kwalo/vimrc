@@ -37,18 +37,12 @@
 [submodule "bundle/skybison"]
 	path = bundle/skybison
 	url = git@github.com:paradigm/SkyBison.git
-[submodule "bundle/FSwitch"]
-	path = bundle/FSwitch
-	url = git@github.com:vim-scripts/FSwitch.git
-[submodule "bundle/bitbake"]
-	path = bundle/bitbake
-	url = git@github.com:kergoth/vim-bitbake.git
-[submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
-	url = git@github.com:kien/ctrlp.vim.git
-[submodule "bundle/typescript-vim"]
-	path = bundle/typescript-vim
-	url = git@github.com:leafgarland/typescript-vim.git
 [submodule "bundle/vim-vue"]
 	path = bundle/vim-vue
 	url = git@github.com:posva/vim-vue.git
+[submodule "bundle/sleuth"]
+	path = bundle/sleuth
+	url = git://github.com/tpope/vim-sleuth.git
+[submodule "bundle/rsi"]
+	path = bundle/rsi
+	url = git@github.com:tpope/vim-rsi.git
