@@ -46,3 +46,6 @@
 [submodule "bundle/rsi"]
 	path = bundle/rsi
 	url = git@github.com:tpope/vim-rsi.git
+[submodule "bundle/comments"]
+	path = bundle/comments
+	url = git@github.com:kwalo/vim-colorscheme-comments.git

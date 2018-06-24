@@ -93,7 +93,7 @@ set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 "set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
 
-colorscheme ron
+colorscheme comments
 
 if has("gui_running")
     set guifont=DejaVu\ Sans\ Mono\ 10
