@@ -41,7 +41,7 @@ nmap <leader>q :q<cr>
 nmap <leader>f :find<cr>
 
 " Switch to prevoius buffer
-nmap <leader>b :b#<cr>
+nmap B :b#<cr>
 
 " Cut/Copy/Paste from clipboard
 map <leader>d "+d
@@ -52,17 +52,9 @@ map <leader>p "+gP
 map <C-W>, <C-W><
 map <C-W>. <C-W>>
 
-" Search for selected text, forwards or backwards
-vnoremap <silent> * :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy/<C-R><C-R>=substitute(
-  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy?<C-R><C-R>=substitute(
-  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
+" Split and vsplit
+map <leader>s :split<CR>
+map <leader>v :vsplit<CR>
 
 " Select whole buffer
 map <leader>G ggVG
@@ -71,8 +63,9 @@ set expandtab
 set softtabstop=4
 set shiftwidth=4
 
-" set text wraping
-set textwidth=120
+" Disable text wraping
+set textwidth=0
+set nowrap
 
 " --> [visuals]
 "
@@ -89,21 +82,11 @@ set nonumber
 set scrolloff=3
 
 " always show statusline
-set laststatus=2
+set laststatus=0
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 "set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
 
 colorscheme comments
-
-if has("gui_running")
-    set guifont=DejaVu\ Sans\ Mono\ 10
-    set columns=174
-    set lines=48
-    " have the mouse enabled all the time:
-    set mouse=a
-else
-    set mouse=
-endif
 
 " --> [others]
 "
@@ -122,13 +105,6 @@ map Q gq
 inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
 inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>" 
 
-" Cursor movement in Insert mode
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
 " no sound on errors
 set noerrorbells
 set novisualbell
@@ -171,6 +147,10 @@ map <leader>l <F4>
 
 " ctags shortcut
 map <leader>c :!ctags -R<CR>
+
+" Bind S to search and replace last search
+nnoremap S :%s///g<Left><Left>
+vnoremap S  :s///g<Left><Left>
 
 " --> [autocommands]
 "
@@ -230,16 +210,12 @@ endfunction
 " Kill the buffer quickly
 map <leader>k :bd<CR>
 
+" Tabularize shortcuts
 map <Leader>a= :Tabularize /=
 map <Leader>a: :Tabularize /:
 map <Leader>a:: :Tabularize /:\zs
 map <Leader>a, :Tabularize /,
 map <Leader>a<Bar> :Tabularize /
-
-" CtrlP features
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_working_path_mode = 'ra'
 
 " Ignore some files from editing
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -254,11 +230,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " Autocommands
 if has("autocmd")
     :autocmd FileType python     set makeprg=nosetests
-    :autocmd FileType python     map gd :RopeGotoDefinition<CR>
-    :autocmd FileType html       set textwidth=160
-    :autocmd FileType phtml      set textwidth=160
     :autocmd FileType c          set tabstop=8 shiftwidth=8 softtabstop=8
-    :autocmd FileType ruby       set tabstop=2
     :autocmd FileType text       setlocal textwidth=78
     :autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
     :autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))

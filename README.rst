@@ -16,13 +16,6 @@ Updating
     git pull
     git submodule foreach git pull
 
-Features
-````````
-
-
-* wombat colorscheme
-* enhanced syntax highlight for html, Python, JavaScript and Vala
-* Tabularize plugin
 
 Keyboard shortcuts
 ``````````````````
@@ -32,6 +25,8 @@ Shortuct Vim command          Comment
 ======== ==================== =======
 Normal mode
 -------------------------------------
+``B``    ``:b#``              Switch to last buffer
+``S``    ``:%s///g``          Search and replace
 ``,d``   ``"+d``              Cut to clipboard
 ``,y``   ``"+y``              Copy to clipboard
 ``,p``   ``"+gP``             Paste from clipboard
@@ -43,6 +38,9 @@ Normal mode
 ``,h``   ``:noh``             Unhighlight search matches
 ``,m``   ``:make``            Build project
 ``,c``   ``!ctags -R``        Update ctags file
+Visual mode
+-------------------------------------
+``S``    ``:s///g``          Search and replace selection
 Insert mode
 -------------------------------------
 ``C-n``                       Completion popup menu
