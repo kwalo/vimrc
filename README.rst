@@ -14,7 +14,7 @@ Updating
 ::
 
     git pull
-    git submodule foreach git pull
+    git submodule update --remote
 
 
 Keyboard shortcuts
