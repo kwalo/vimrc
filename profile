@@ -81,12 +81,16 @@ set nonumber
 " laeve some space when moving vertical
 set scrolloff=3
 
-" always show statusline
+" don't show statusline
 set laststatus=0
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 "set statusline=\ %F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
 
 colorscheme comments
+
+" highlight lines that expand above column 78 (my max width on vsplit)
+highlight ColorColumn ctermfg=208 ctermbg=Black
+call matchadd('ColorColumn', '\%78v\s*\zs\S', 100)
 
 " --> [others]
 "
@@ -130,9 +134,6 @@ set listchars=tab:▸\ ,eol:¬
 " Change color of omnicomplete menu
 highlight Pmenu guibg=Grey40
 
-" Change status line color
-highlight StatusLine ctermfg=8 ctermbg=7
-
 " turn on NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 
@@ -143,7 +144,7 @@ map <leader>m :make<CR>
 map <leader>h :noh<CR>
 
 " see list of buffers
-map <leader>l <F4>
+map <leader>l :ls<CR>:
 
 " ctags shortcut
 map <leader>c :!ctags -R<CR>
@@ -151,6 +152,10 @@ map <leader>c :!ctags -R<CR>
 " Bind S to search and replace last search
 nnoremap S :%s///g<Left><Left>
 vnoremap S  :s///g<Left><Left>
+
+" Use space to jump down a page (like browsers do)...
+nnoremap   <Space> <PageDown>
+xnoremap   <Space> <PageDown>
 
 " --> [autocommands]
 "
@@ -166,21 +171,10 @@ autocmd BufReadPost *
 
 " --> [functions]
 "
-"  diff current buffer with same file from disk
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  " new | r # | normal 1Gdd - for horizontal split
-  vnew | r # | normal 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! Diff call s:DiffWithSaved()
-
 
 " Delete the current buffer, issuing bnext in all windows
 " where displayed before that
-function DeleteBuffer2()
+function! DeleteBuffer2()
   let bid = bufnr("%")
   let wid = winnr()
   windo if bid == bufnr("%") | bprev | endif
@@ -189,7 +183,7 @@ function DeleteBuffer2()
 endfunction
 
 " count the number of buffers
-function BufferCount()
+function! BufferCount()
   " save cur buf number
   let cbuf = bufnr("%")
   let bnum = 0
@@ -199,7 +193,7 @@ function BufferCount()
   return bnum
 endfunction
 
-function DeleteBuffer()
+function! DeleteBuffer()
   if BufferCount() > 1
     call DeleteBuffer2()
   else
