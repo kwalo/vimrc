@@ -32,8 +32,8 @@ set autowrite
 
 
 " set mapleader
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = ";"
+let g:mapleader = ";"
 
 " fast saving
 nmap <leader>w :w!<cr>
@@ -55,6 +55,9 @@ map <C-W>. <C-W>>
 " Split and vsplit
 map <leader>s :split<CR>
 map <leader>v :vsplit<CR>
+
+" Insert line break after cursor
+nmap <leader>b a<CR><ESC>
 
 " Select whole buffer
 map <leader>G ggVG
