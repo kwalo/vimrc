@@ -223,12 +223,13 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " Abbreviations
 :ab ret return
 
-
 " Autocommands
 if has("autocmd")
     :autocmd FileType python     set makeprg=nosetests
     :autocmd FileType c          set tabstop=8 shiftwidth=8 softtabstop=8
     :autocmd FileType text       setlocal textwidth=78
+    :autocmd FileType html       setlocal foldmethod=syntax
+    :autocmd FileType html       syntax region htmlFold start="<\z(p\|h\d\|i\?frame\|table\|colgroup\|thead\|tfoot\|tbody\|t[dhr]\|pre\|[diou]l\|li\|span\|div\|head\|script\|style\|blockquote\|form\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedIn=htmlHead,htmlH
     :autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
     :autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
     :autocmd VimLeave * call system("tmux rename-window zsh")
