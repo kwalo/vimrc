@@ -229,7 +229,7 @@ if has("autocmd")
     :autocmd FileType c          set tabstop=8 shiftwidth=8 softtabstop=8
     :autocmd FileType text       setlocal textwidth=78
     :autocmd FileType html       setlocal foldmethod=syntax
-    :autocmd FileType html       syntax region htmlFold start="<\z(p\|h\d\|i\?frame\|table\|colgroup\|thead\|tfoot\|tbody\|t[dhr]\|pre\|[diou]l\|li\|span\|div\|head\|script\|style\|blockquote\|form\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedIn=htmlHead,htmlH
+    :autocmd FileType html       syntax region htmlFold start="<\z([a-z0-9-]\+\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedIn=htmlHead,htmlH
     :autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
     :autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
     :autocmd VimLeave * call system("tmux rename-window zsh")
