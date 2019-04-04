@@ -25,19 +25,27 @@ Shortuct Vim command          Comment
 ======== ==================== =======
 Normal mode
 -------------------------------------
-``B``    ``:b#``              Switch to last buffer
-``S``    ``:%s///g``          Search and replace
-``,d``   ``"+d``              Cut to clipboard
-``,y``   ``"+y``              Copy to clipboard
-``,p``   ``"+gP``             Paste from clipboard
-``,G``   ``ggVG``             Select all text
-``,n``   ``:NerdTreeToggle``  Show/Hide NERD Tree panel
-``,t``   ``:TagbarToggle``     Show/Hode Tagbar panel
-``,l``   ``<F4>``             Display quickbuf switcher
-``,k``   ``:bd``              Kill current buffer
-``,h``   ``:noh``             Unhighlight search matches
-``,m``   ``:make``            Build project
-``,c``   ``!ctags -R``        Update ctags file
+``B``           ``:b#``              Switch to last buffer
+``S``           ``:%s///g``          Search and replace
+``;s``          ``:split``           Split horizontally
+``;s``          ``:vsplit``          Split vertically
+``;d``          ``"+d``              Cut to clipboard
+``;y``          ``"+y``              Copy to clipboard
+``;p``          ``"+gP``             Paste from clipboard
+``;G``          ``ggVG``             Select all text
+``;n``          ``:NerdTreeToggle``  Show/Hide NERD Tree panel
+``;t``          ``:TagbarToggle``    Show/Hode Tagbar panel
+``;l``          ``:ls:``             List buffers and start typing command
+``;k``          ``:bd``              Kill current buffer
+``;h``          ``:noh``             Unhighlight search matches
+``;m``          ``:make``            Build project
+``;c``          ``!ctags -R``        Update ctags file
+``<Space>``     ``<PageDown>``
+``<BackSpace>`` ``<PageUp>``
+``C-h``         ``C-<``              Decrease current window width
+``C-l``         ``C->``              Increase current window width
+``C-j``         ``C-Ww``             Go to next window
+``C-k``         ``C-WW``             Go to prev window
 Visual mode
 -------------------------------------
 ``S``    ``:s///g``          Search and replace selection

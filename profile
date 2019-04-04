@@ -49,8 +49,12 @@ map <leader>y "+y
 map <leader>p "+gP
 
 " Resize window vertically
-map <C-W>, <C-W><
-map <C-W>. <C-W>>
+nnoremap <C-h> <C-W><
+nnoremap <C-l> <C-W>>
+
+" Go to next, previous window
+nnoremap <C-j> <C-W>w
+nnoremap <C-k> <C-W>W
 
 " Split and vsplit
 map <leader>s :split<CR>
@@ -110,7 +114,7 @@ map Q gq
 
 " Completion popup menu
 inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
-inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>" 
+inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
 
 " no sound on errors
 set noerrorbells
@@ -159,6 +163,8 @@ vnoremap S  :s///g<Left><Left>
 " Use space to jump down a page (like browsers do)...
 nnoremap   <Space> <PageDown>
 xnoremap   <Space> <PageDown>
+nnoremap   <BackSpace> <PageUp>
+xnoremap   <BackSpace> <PageUp>
 
 " --> [autocommands]
 "
@@ -225,7 +231,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Autocommands
 if has("autocmd")
-    :autocmd FileType python     set makeprg=nosetests
+    :autocmd BufWritePre *       %s/\s\+$//e
     :autocmd FileType c          set tabstop=8 shiftwidth=8 softtabstop=8
     :autocmd FileType text       setlocal textwidth=78
     :autocmd FileType html       setlocal foldmethod=syntax
