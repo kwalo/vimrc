@@ -82,8 +82,8 @@ set ruler
 " highlight syntax
 syntax on
 
-" show line nuber
-set nonumber
+" show relative line nuber
+set relativenumber
 
 " laeve some space when moving vertical
 set scrolloff=3
@@ -237,9 +237,13 @@ if has("autocmd")
     :autocmd FileType html       setlocal foldmethod=syntax
     :autocmd FileType html       syntax region htmlFold start="<\z([a-z0-9-]\+\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedIn=htmlHead,htmlH
     :autocmd FileType javascript set tabstop=4 shiftwidth=4 softtabstop=4
+    :autocmd FileType mail       set norelativenumber
     :autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
     :autocmd VimLeave * call system("tmux rename-window zsh")
     :autocmd BufEnter * let  &titlestring = " " . expand("%:t")
     set title
 endif
 
+if filereadable(".autostart.vim")
+    :source .autostart.vim
+endif

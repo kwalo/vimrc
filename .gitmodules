@@ -13,18 +13,12 @@
 [submodule "bundle/python-syntax"]
 	path = bundle/python-syntax
 	url = git@github.com:hdima/python-syntax.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
 [submodule "bundle/tablular"]
 	path = bundle/tablular
 	url = https://github.com/godlygeek/tabular.git
 [submodule "bundle/abolish"]
 	path = bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = git@github.com:garbas/vim-snipmate.git
 [submodule "bundle/tlib"]
 	path = bundle/tlib
 	url = git@github.com:tomtom/tlib_vim.git
@@ -34,9 +28,6 @@
 [submodule "bundle/skybison"]
 	path = bundle/skybison
 	url = git@github.com:paradigm/SkyBison.git
-[submodule "bundle/vim-vue"]
-	path = bundle/vim-vue
-	url = git@github.com:posva/vim-vue.git
 [submodule "bundle/sleuth"]
 	path = bundle/sleuth
 	url = git://github.com/tpope/vim-sleuth.git
