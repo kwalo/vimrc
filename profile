@@ -82,6 +82,9 @@ set ruler
 " highlight syntax
 syntax on
 
+" show line number
+set number
+
 " show relative line nuber
 set relativenumber
 
