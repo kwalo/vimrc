@@ -35,6 +35,10 @@ set autowrite
 let mapleader = ";"
 let g:mapleader = ";"
 
+" Double-leader to escape
+inoremap <leader><leader> <ESC>
+vnoremap <leader><leader> <ESC>
+
 " fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
