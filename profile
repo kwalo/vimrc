@@ -205,6 +205,7 @@ function! BufferCount()
   let bnum = 0
   bufdo let bnum = bnum + 1
   " return to the buf
+  "
   exe "b " . cbuf
   return bnum
 endfunction
@@ -235,6 +236,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Abbreviations
 :ab ret return
+:ab pk  Pozdrawiam,<Enter>Krzysztof
+:ab pw  Pozdrawiam,<Enter>Krzysztof Walo
 
 " Autocommands
 if has("autocmd")
@@ -244,7 +247,7 @@ if has("autocmd")
     :autocmd FileType html       setlocal foldmethod=syntax
     :autocmd FileType html       syntax region htmlFold start="<\z([a-z0-9-]\+\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedIn=htmlHead,htmlH
     :autocmd FileType javascript set tabstop=4 shiftwidth=4 softtabstop=4
-    :autocmd FileType mail       set norelativenumber
+    :autocmd FileType mail       set norelativenumber nonumber
     :autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
     :autocmd VimLeave * call system("tmux rename-window zsh")
     :autocmd BufEnter * let  &titlestring = " " . expand("%:t")
