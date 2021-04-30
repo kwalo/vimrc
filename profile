@@ -71,8 +71,9 @@ nmap <leader>b a<CR><ESC>
 map <leader>G ggVG
 " set rational tabs & co.
 set expandtab
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=0
+set shiftwidth=0
+set tabstop=8
 
 " Disable text wraping
 set textwidth=0
@@ -241,15 +242,12 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Autocommands
 if has("autocmd")
-    :autocmd BufWritePre *       %s/\s\+$//e
-    :autocmd FileType c          set tabstop=8 shiftwidth=8 softtabstop=8
-    :autocmd FileType text       setlocal textwidth=78
+    ":autocmd BufWritePre *       %s/\s\+$//e
+    :autocmd FileType c          setlocal tabstop=8 noexpandtab
     :autocmd FileType html       setlocal foldmethod=syntax
     :autocmd FileType html       syntax region htmlFold start="<\z([a-z0-9-]\+\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedIn=htmlHead,htmlH
-    :autocmd FileType javascript set tabstop=4 shiftwidth=4 softtabstop=4
-    :autocmd FileType mail       set norelativenumber nonumber
-    :autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
-    :autocmd VimLeave * call system("tmux rename-window zsh")
+    :autocmd FileType javascript setlocal tabstop=4
+    :autocmd FileType mail       setlocal norelativenumber nonumber wrap
     :autocmd BufEnter * let  &titlestring = " " . expand("%:t")
     set title
 endif
